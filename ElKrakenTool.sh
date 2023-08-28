@@ -285,7 +285,7 @@ fi
 ##############################################################################OpenRedirect START############################################################################
 if [ "$or" = true ]; then
 echo "${green}Starting to check Open Redirect"
-waybackurls $domain | grep -a -i \=http | qsreplace 'http://evil.com' | while read host do;do curl -s -L $host -I| echo -e "$host" ;done >> openredirect.csv 2>/dev/null
+waybackurls $domain | grep -a -i \=http | qsreplace 'http://evil.com' | while read host do;do curl -s -L $host -I| echo -e "$host" ;done >> $directory_data/$domain/$foldername/openredirect.csv 2>/dev/null
 fi
 
 ##############################################################################nuclei START############################################################################
