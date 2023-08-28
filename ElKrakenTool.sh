@@ -240,7 +240,6 @@ todate=$(date +"%Y-%m-%d")
 path=$(pwd)
 foldername=scan-$todate
   mkdir $directory_data/$domain/$foldername
-  mkdir $directory_data/$domain/$foldername/nuclei
   mkdir $directory_data/$domain/$foldername/nmap
 
 ##############################################################################Discovery START############################################################################
