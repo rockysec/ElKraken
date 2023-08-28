@@ -9,7 +9,7 @@ tokenSlack="YOUR_TOKEN"
 channelSlack="YOUR_CHANNEL"
 directory_tools=~/tools
 directory_data=/root
-ssh_conection="user@ipadd:/folder" ##Para conexion sftp entre servidor de scan y servidor repositorio de data
+ssh_conection="user@ipadd:/folder" ##reemplazar user, ipaddr y folder por los datos de tu servidor repositorio de resultados de escaneo
 ########################################
 
 
