@@ -252,8 +252,7 @@ foldername=scan-$todate
   cat $directory_data/$domain/$foldername/subdomain_ip.csv | sed "s/[,].*//" | sort -u >> $directory_data/$domain/$foldername/$domain.txt
   echo "${green}Probing for live hosts..."
   echo $domain >> $directory_data/$domain/$foldername/$domain.txt
-  cat $directory_data/$domain/$foldername/$domain.txt | httpx >> $directory_data/$domain/$foldername/responsive.txt
-  cat $directory_data/$domain/$foldername/responsive.txt >> $directory_data/$domain/$foldername/urllist.csv
+  cat $directory_data/$domain/$foldername/$domain.txt | httpx >> $directory_data/$domain/$foldername/urllist.csv
   cp $directory_data/$domain/$foldername/$domain.txt $directory_data/$domain/$foldername/subdomain.csv
   echo  "${yellow}Total of $(wc -l $directory_data/$domain/$foldername/urllist.csv | awk '{print $1}') live subdomains were found${reset}"
 fi
