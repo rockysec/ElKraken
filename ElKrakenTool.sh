@@ -245,8 +245,6 @@ foldername=scan-$todate
 ##############################################################################Discovery START############################################################################
   curl -F token=$tokenSlack -F channel=$channelSlack -F text="El runner a iniciado el scan en $domain!" https://slack.com/api/chat.postMessage
   echo "${green}Recon started in Subdomain $domain ${reset}"
-  echo "${green}Listing subdomains using Sublist3r..."
-  python3 $directory_tools/Sublist3r/sublist3r.py -d $domain -t 10 -v -o $directory_data/$domain/$foldername/$domain.txt > /dev/null
   echo "Listing subdomains using subfinder..."
   subfinder -all -silent -d $domain -oI -nW > $directory_data/$domain/$foldername/subdomain_ip.csv
   cat $directory_data/$domain/$foldername/subdomain_ip.csv | sed "s/[,].*//" | sort -u >> $directory_data/$domain/$foldername/$domain.txt
