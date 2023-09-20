@@ -10,7 +10,7 @@ El Kraken es una herramienta desarrollada en bash scripting, la cual trabaja sim
 git clone https://github.com/rockysec/ElKraken-Tools
 
 2 - Instalar las tools dependencias con el script ubicado en la carpeta ElKraken/Tools:  
-cd ElKraken/tools  
+cd ElKraken/Tools  
 sudo bash install.sh  
 
 3 - A modo opcional, configurar las APIKEYS en cada uno de los servicios de escaneo publicos, ejemplo censys, securitytrails, virustotal, etc. Esto ofrece mejores resultados obtenidos en el proceso de recon automatizado.  
