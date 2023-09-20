@@ -6,38 +6,38 @@ Herramienta automatizada para el proceso de recon activo/pasivo y explotacion de
 El Kraken es una herramienta desarrollada en bash scripting, la cual trabaja simil a un pulpo, tomando como input el output de otros procesos previos y con ello armar un pipeline de escaneos al target suministrado.
 
 # Configuracion Inicial
-1 - Descargar la herramienta en donde desees instalarla y ejecutarla:
+1 - Descargar la herramienta en donde desees instalarla y ejecutarla:  
 git clone https://github.com/rockysec/ElKraken-Tools
 
-2 - Instalar las tools dependencias con el script ubicado en la carpeta ElKraken/Tools:
-cd ElKraken/tools
-sudo bash install.sh
+2 - Instalar las tools dependencias con el script ubicado en la carpeta ElKraken/Tools:  
+cd ElKraken/tools  
+sudo bash install.sh  
 
-3 - A modo opcional, configurar las APIKEYS en cada uno de los servicios de escaneo publicos, ejemplo censys, securitytrails, virustotal, etc. Esto ofrece mejores resultados obtenidos en el proceso de recon automatizado.
-Editar el archivo ./config/config.yaml y agregar las Keys correspondientes como se muestra a continuacion:
+3 - A modo opcional, configurar las APIKEYS en cada uno de los servicios de escaneo publicos, ejemplo censys, securitytrails, virustotal, etc. Esto ofrece mejores resultados obtenidos en el proceso de recon automatizado.  
+Editar el archivo ./config/config.yaml y agregar las Keys correspondientes como se muestra a continuacion:  
 
-[...]
-censys:
-    - xxxxxxxyourapikeyxxxxxxxx
-certspotter:
-    - xxxxxxxyourapikeyxxxxxxxx
-chaos: [xxxxxxxyourapikeyxxxxxxxx]
-github:
-    - xxxxxxxyourapikeyxxxxxxxx
-intelx:
-    - xxxxxxxyourapikeyxxxxxxxx
-passivetotal:
-    - xxxxxxxyourapikeyxxxxxxxx
-recon: []
-robtex: []
-securitytrails:
-    - xxxxxxxyourapikeyxxxxxxxx
-shodan:
-    - xxxxxxxyourapikeyxxxxxxxx
-[...]
+[...]  
+censys:  
+    - xxxxxxxyourapikeyxxxxxxxx  
+certspotter:  
+    - xxxxxxxyourapikeyxxxxxxxx  
+chaos: [xxxxxxxyourapikeyxxxxxxxx]  
+github:  
+    - xxxxxxxyourapikeyxxxxxxxx  
+intelx:  
+    - xxxxxxxyourapikeyxxxxxxxx  
+passivetotal:  
+    - xxxxxxxyourapikeyxxxxxxxx  
+recon: []  
+robtex: []  
+securitytrails:  
+    - xxxxxxxyourapikeyxxxxxxxx  
+shodan:  
+    - xxxxxxxyourapikeyxxxxxxxx  
+[...]  
 
 # Argumentos y Modo de uso:
-sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]
+sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]  
 
 -domain <dominio.com>: Argumento mandatorio para especificar el target a revisar  
 -recon: Argumento mandatorio para proceso de recon via validacion dns, urls, etc  
