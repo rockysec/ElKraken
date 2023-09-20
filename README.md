@@ -7,7 +7,7 @@ El Kraken es una herramienta desarrollada en bash scripting, la cual trabaja sim
 
 # Configuracion Inicial
 1 - Descargar la herramienta en donde desees instalarla y ejecutarla:  
-git clone https://github.com/rockysec/ElKraken-Tools
+git clone https://github.com/rockysec/ElKraken
 
 2 - Instalar las tools dependencias con el script ubicado en la carpeta ElKraken/Tools:  
 cd ElKraken/Tools  
