@@ -48,7 +48,7 @@ sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]
 
 -domain <dominio.com>: Argumento mandatorio para especificar el target a revisar  
 -recon: Argumento mandatorio para proceso de recon via validacion dns, urls, etc  
--wayback: Realiza recopilacion de info en wayback url  
+-wayback: Realiza recopilacion de info con wayback url  
 -dirsearch: Realiza fuzzing de directorios  
 -linkfinder: Realiza la busqueda de nuevos endpoints en archivos js  
 -nuclei_cves: Realiza scaneos con nuclei en busca de vulnerabilidades  
@@ -65,11 +65,12 @@ sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]
 -xss: Realiza busquedas de XSS  
 -crlf: Realiza busqueda de vulnerabilidad CRLF  
 -sqli: Realiza la busqueda de SQLi  
--or: Realiza la busqueda de Open Redirecg  
+-or: Realiza la busqueda de Open Redirec   
 -pp: Realiza la busqueda de Prototype Pollution  
--output: Envia la data recopilada al nodo de ELK  
+-output: Envia la data recopilada al nodo de alamacenamiento de resultados  
 
+Como recomendacion, recomiendo utilizar la herramienta tmux que sirve para generar sesiones virtuales, super util para evitar perder el avance de algun trabajo realizado en la consola ante una desconexion. Con ello te aseguras que ante una desconexion inminente no pierdas el proceso de escaneo que tengas en curso.  
 
 Espero sea de utilidad la herramienta y pueda facilitar tu proceso de bug bounty.
 
-Happy Hacking!
+Happy Hacking!!!
