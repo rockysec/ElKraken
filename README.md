@@ -14,7 +14,7 @@ cd ElKraken/Tools
 sudo bash install.sh  
 
 3 - A modo opcional, configurar las APIKEYS en cada uno de los servicios de escaneo publicos, ejemplo censys, securitytrails, virustotal, etc. Esto ofrece mejores resultados obtenidos en el proceso de recon automatizado.  
-Editar el archivo ./config/config.yaml y agregar las Keys correspondientes como se muestra a continuacion:  
+Editar el archivo ElKraken/Tools/config.yaml tal como se muestra a continuacion:  
 
 [...]  
 censys:  
@@ -35,6 +35,8 @@ securitytrails:
 shodan:  
     - xxxxxxxyourapikeyxxxxxxxx  
 [...]  
+
+Posterior a ello guardar el archivo en la ruta ./config/config.yaml  
 
 # Argumentos y Modo de uso:
 sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]  
