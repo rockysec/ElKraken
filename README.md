@@ -38,6 +38,11 @@ shodan:
 
 Posterior a ello guardar el archivo en la ruta ./config/config.yaml  
 
+Como ultima recomendacion de configuracion, estan las variables de configuracion dentro del archivo ElKrakenTool.sh alli podras configurar las siguientes variables para una mejor experiencia de uso:  
+tokenSlack: Variable en donde debes usar el token para enviar las notificaciones del inicio y fin del escaneo via slack las cuales van a servir para un mayor control de las tareas  
+channelSlack: Variable en donde debes usar el canal de slack al cual enviaras las notificaciones del inicio y fin del escaneo  
+ssh_conection: Variable en donde indicaras algun servidor remoto al cual la herramienta se conectara via sftp para enviar los resultados de los escaneos, ejemplo, "user@ipaddress:/DestinationFolder". Esta funcionalidad se activa con el flag -output  
+
 # Argumentos y Modo de uso:
 sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]  
 
