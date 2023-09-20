@@ -65,4 +65,4 @@ sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]
 
 Espero sea de utilidad la herramienta y pueda facilitar tu proceso de bug bounty.
 
-##Happy Hacking!
+Happy Hacking!
