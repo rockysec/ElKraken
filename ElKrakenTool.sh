@@ -71,7 +71,6 @@ function flags {
   echo "-nuclei_vuln: Realiza scaneos con nuclei en busca de vulnerabilidades varias"
   echo "-cors: Analiza si las url son vulnerables a Cors"
   echo "-nmap: Realiza scan a todos los puertos de manera agresiva en todos los subdominios"
-  echo "-xss: Realiza busquedas de XSS"
   echo "-crlf: Realiza busqueda de vulnerabilidad CRLF"
   echo "-sqli: Realiza la busqueda de SQLi"
   echo "-or: Realiza la busqueda de Open Redirecg"
@@ -104,7 +103,6 @@ nuclei_tech=false
 nuclei_vuln=false
 cors=false
 nmap=false
-xss=false
 crlf=false
 sqli=false
 or=false
@@ -181,10 +179,6 @@ while [[ $# -gt 0 ]]; do
       ;;
     -nmap)
       nmap=true
-      shift
-      ;;
-    -xss)
-      xss=true
       shift
       ;;
     -crlf)
@@ -342,26 +336,6 @@ echo "{green}Starting to check Open Ports"
 bash $directory_tools/customscripts/loop_nmap.sh $directory_data/$domain/$foldername/subdomain.csv
 mv $directory_data/nmap_full_* $directory_data/$domain/$foldername/nmap/
 fi
-
-
-##############################################################################XSS START############################################################################
-if [ "$xss" = true ]; then
-echo "{green}Starting to check XSS"
-
- cat $directory_data/$domain/$foldername/urllist.csv | dalfox pipe --remote-wordlists=burp,assetnote  --report-format json --poc-type='curl' --output $directory_data/$domain/$foldername/dalfox_subdomains_tmp.txt
- cat $directory_data/$domain/$foldername/dalfox_subdomains_tmp.txt | awk '{print $5}' > $directory_data/$domain/$foldername/dalfox.txt
- rm $directory_data/$domain/$foldername/dalfox_subdomains_tmp.txt
-
- cat $directory_data/$domain/$foldername/new_endpoint.txt | dalfox pipe --remote-wordlists=burp,assetnote  --report-format json --poc-type='curl' --output $directory_data/$domain/$foldername/dalfox_new_endpoint_tmp.txt
-
- cat $directory_data/$domain/$foldername/dalfox_new_endpoint_tmp.txt | awk '{print $5}' >> $directory_data/$domain/$foldername/dalfox.txt
- rm $directory_data/$domain/$foldername/dalfox_new_endpoint_tmp.txt
-
- cat $directory_data/$domain/$foldername/wayback.txt | dalfox pipe --remote-wordlists=burp,assetnote  --report-format json --poc-type='curl' --output $directory_data/$domain/$foldername/dalfox_wayback_tmp.txt
- cat $directory_data/$domain/$foldername/dalfox_wayback_tmp.txt | awk '{print $5}' >> $directory_data/$domain/$foldername/dalfox.txt
- rm $directory_data/$domain/$foldername/dalfox_wayback_tmp.txt
-fi
-
 
 ##############################################################################CRLF START############################################################################
 if [ "$crlf" = true ]; then
