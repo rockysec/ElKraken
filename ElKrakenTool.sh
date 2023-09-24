@@ -72,7 +72,6 @@ function flags {
   echo "-cors: Analiza si las url son vulnerables a Cors"
   echo "-nmap: Realiza scan a todos los puertos de manera agresiva en todos los subdominios"
   echo "-crlf: Realiza busqueda de vulnerabilidad CRLF"
-  echo "-sqli: Realiza la busqueda de SQLi"
   echo "-or: Realiza la busqueda de Open Redirecg"
   echo "-pp: Realiza la busqueda de Prototype Pollution"
   echo "-output: Envia la data recopilada al nodo de ELK"
@@ -104,7 +103,6 @@ nuclei_vuln=false
 cors=false
 nmap=false
 crlf=false
-sqli=false
 or=false
 pp=false
 output=false
@@ -186,9 +184,6 @@ while [[ $# -gt 0 ]]; do
       shift
       ;;
     -sqli)
-      sqli=true
-      shift
-      ;;
     -or)
       or=true
       shift
@@ -346,18 +341,6 @@ echo "{green}Starting to check CRLF"
  cat $directory_data/$domain/$foldername/crlfuzz_wayback.txt >> $directory_data/$domain/$foldername/crlfuzz.txt
  rm $directory_data/$domain/$foldername/crlfuzz_urllist.csv  $directory_data/$domain/$foldername/crlfuzz_wayback.txt
 fi
-
-
-##############################################################################SQLi START############################################################################
-if [ "$sqli" = true ]; then
- echo "{green}Starting to check SQLi Vulnerabilities"
- gf sqli $directory_data/$domain/$foldername/wayback.txt $directory_data/$domain/$foldername/urllist.csv >> $directory_data/$domain/$foldername/sqli_candidates.txt 
- python $directory_tools/sqlmap/sqlmap.py -m $directory_data/$domain/$foldername/sqli_candidates.txt --dbs --batch > $directory_data/$domain/$foldername/sqli_tmp.txt
- bash $directory_data/$domain/$foldername/parse_sqli.sh 
- mv $directory_data/sqli.csv $directory_data/$domain/$foldername/
- rm $directory_data/$domain/$foldername/sqli_candidates.txt
-fi
-
 
 ##############################################################################Output START############################################################################
 if [ "$output" = true ]; then
