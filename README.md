@@ -61,7 +61,6 @@ sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]
 -nuclei_vuln: Realiza scaneos con nuclei en busca de vulnerabilidades varias  
 -cors: Analiza si las url son vulnerables a Cors  
 -nmap: Realiza scan a todos los puertos de manera agresiva en todos los subdominios  
--xss: Realiza busquedas de XSS  
 -crlf: Realiza busqueda de vulnerabilidad CRLF  
 -sqli: Realiza la busqueda de SQLi  
 -or: Realiza la busqueda de Open Redirec   
