@@ -73,7 +73,6 @@ function flags {
   echo "-nmap: Realiza scan a todos los puertos de manera agresiva en todos los subdominios"
   echo "-crlf: Realiza busqueda de vulnerabilidad CRLF"
   echo "-or: Realiza la busqueda de Open Redirecg"
-  echo "-pp: Realiza la busqueda de Prototype Pollution"
   echo "-output: Envia la data recopilada al nodo de ELK"
 
 }
@@ -104,7 +103,6 @@ cors=false
 nmap=false
 crlf=false
 or=false
-pp=false
 output=false
 
 while [[ $# -gt 0 ]]; do
@@ -188,10 +186,6 @@ while [[ $# -gt 0 ]]; do
       or=true
       shift
       ;;
-    -pp)
-      pp=true
-      shift
-      ;;
     -output)
       output=true
       shift
@@ -256,13 +250,6 @@ fi
 if [ "$dirsearch" = true ]; then
 echo "${green}Starting to check discovery with dirsearch"
 dirsearch -w ~/tools/SecLists/Discovery/Web-Content/directory-list-2.3-medium.txt -e $dirsearchExtensions -t 50 -exclude 403,401,404,400 -l $directory_data/$domain/$foldername/urllist.csv --deep-recursive -R 4 --crawl --full-url  --no-color --format=csv -o $directory_data/$domain/$foldername/dirsearch.csv
-fi
-
-##############################################################################Dirsearch START############################################################################
-if [ "$pp" = true ]; then
-echo "${green}Starting to check Prototype Pollution"
-subfinder -d $domain -all -silent | httpx -silent -threads 300 | anew -q alive.txt && sed 's/$/\/?__proto__[testparam]=exploit\//' alive.txt | page-fetch -j 'window.testparam == "exploit"? ", VULNERABLE" : ", NOT VULNERABLE"' | sed "s/(//g" | sed "s/)//g" | sed "s/JS //g" | grep "VULNERABLE" > $directory_data/$domain/$foldername/prototype_pollution.csv
-rm alive.txt
 fi
 
 ##############################################################################OpenRedirect START############################################################################
