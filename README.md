@@ -50,7 +50,6 @@ sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]
 -recon: Argumento mandatorio para proceso de recon via validacion dns, urls, etc  
 -wayback: Realiza recopilacion de info con wayback url  
 -dirsearch: Realiza fuzzing de directorios  
--linkfinder: Realiza la busqueda de nuevos endpoints en archivos js  
 -nuclei_cves: Realiza scaneos con nuclei en busca de vulnerabilidades  
 -nuclei_dlogins: Realiza scaneos con nuclei en busca de Default Logins  
 -nuclei_panels: Realiza scaneos con nuclei en busca de panels de login  
