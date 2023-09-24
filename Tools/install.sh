@@ -128,8 +128,6 @@ curl -L -O https://github.com/ffuf/ffuf/releases/download/v1.2.1/ffuf_1.2.1_linu
 tar -xzvf ffuf_1.2.1_linux_amd64.tar.gz
 mv ffuf /usr/bin/
 
-GO111MODULE=on go get github.com/hahwul/dalfox/v2
-
 cd ~/tools
 git clone https://github.com/dwisiswant0/crlfuzz.git
 cd crlfuzz
