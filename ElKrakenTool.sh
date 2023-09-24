@@ -60,7 +60,6 @@ function flags {
   echo "-recon: Realiza validacion dns, urls, etc"
   echo "-wayback: Realiza recopilacion de info en wayback url"
   echo "-dirsearch: Realiza fuzzing de directorios"
-  echo "-linkfinder: Realiza la busqueda de nuevos endpoints en archivos js"
   echo "-nuclei_cves: Realiza scaneos con nuclei en busca de vulnerabilidades"
   echo "-nuclei_dlogins: Realiza scaneos con nuclei en busca de Default Logins"
   echo "-nuclei_panels: Realiza scaneos con nuclei en busca de panels de login"
@@ -94,7 +93,6 @@ domain=""
 recon=false
 wayback=false
 dirsearch=false
-linkfinder=false
 nuclei_cves=false
 nuclei_dlogins=false
 nuclei_panels=false
