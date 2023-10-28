@@ -181,7 +181,6 @@ while [[ $# -gt 0 ]]; do
       crlf=true
       shift
       ;;
-    -sqli)
     -or)
       or=true
       shift
