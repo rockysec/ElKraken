@@ -63,7 +63,6 @@ sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]
 -nmap: Realiza scan a todos los puertos de manera agresiva en todos los subdominios  
 -crlf: Realiza busqueda de vulnerabilidad CRLF  
 -or: Realiza la busqueda de Open Redirec   
--pp: Realiza la busqueda de Prototype Pollution  
 -output: Envia la data recopilada al nodo de alamacenamiento de resultados  
 
 Como recomendacion, recomiendo utilizar la herramienta tmux que sirve para generar sesiones virtuales, super util para evitar perder el avance de algun trabajo realizado en la consola ante una desconexion. Con ello te aseguras que ante una desconexion inminente no pierdas el proceso de escaneo que tengas en curso.  
