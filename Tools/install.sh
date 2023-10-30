@@ -27,6 +27,7 @@ pip3 install dirsearch
 pip install colored
 pip3 install colored
 pip3 install uro
+pip3 install --break-system-packages uro
 pip3 install requests
 
 cd
