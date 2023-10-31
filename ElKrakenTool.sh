@@ -315,7 +315,7 @@ fi
 if [ "$nmap" = true ]; then
 echo "{green}Starting to check Open Ports"
 bash $directory_tools/customscripts/loop_nmap.sh $directory_data/$domain/$foldername/subdomain.csv
-mv $directory_data/nmap_full_* $directory_data/$domain/$foldername/nmap/
+mv nmap_full_* $directory_data/$domain/$foldername/nmap/
 fi
 
 ##############################################################################CRLF START############################################################################
