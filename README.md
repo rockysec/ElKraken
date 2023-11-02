@@ -43,6 +43,12 @@ tokenSlack: Variable en donde debes usar el token para enviar las notificaciones
 channelSlack: Variable en donde debes usar el canal de slack al cual enviaras las notificaciones del inicio y fin del escaneo  
 ssh_conection: Variable en donde indicaras algun servidor remoto al cual la herramienta se conectara via sftp para enviar los resultados de los escaneos, ejemplo, "user@ipaddress:/DestinationFolder". Esta funcionalidad se activa con el flag -output  
 
+# Reportes y resultados:
+Los resultados de los scans se van a poder ver en el home del usuario que realizo el scan, es decir en la ruta ~/
+
+Alli encontraras una carperta con la siguiente nomeclatura:
+~/dominio.com/fecha-scan/
+
 # Argumentos y Modo de uso:
 sudo bash ElKrakenTool.sh -domain domain.com -recon -argumento [-domain ]  
 
